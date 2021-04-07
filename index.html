@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/build.css">
+    <title>Rick & Morty</title>
+</head>
+<body>
+   
+    <!-- 
+        El main tiene que tener un position: relative
+        Modal le das absolute y 100% 100vh 
+            - Al modal le das el blur al padre
+     -->
+
+    <main class="main-container">
+        <header class="header">
+            <div class="container">
+                <div class="header__box-logo">
+                    <img class="header__logo-img" src="images/logo.png">
+                </div>     
+            </div>
+        </header>
+        <div class="input">
+            <div class="container input__content">
+                <input class="input__buscador" type="text" placeholder="Buscar...">
+            </div>
+        </div>
+        <section class="cards-container">
+            <div class="container">
+    
+                <div class="cards"> </div>
+    
+            </div>
+        </section>
+        <div class="section-modal"></div>  
+    </main>
+    
+    <script src="dist/build.js"></script>
+</body>
+</html>
