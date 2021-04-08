@@ -3,11 +3,9 @@ import { clearCards, displayCards } from './card'
 
 export function configureInput(characters){
     
-    const input = document.querySelector('.input__buscador');
+    const input = document.querySelector('.search__input');
 
     input.addEventListener('keydown', function(event){
-        
-       // if(event.keyCode === 13){
 
             const value = input.value
              
@@ -21,7 +19,7 @@ export function configureInput(characters){
 
             clearCards()
             displayCards(filtered)
-    //}
+    
 
 })
 

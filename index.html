@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dist/build.css">
     <title>Rick & Morty</title>
 </head>
 <body>
-   
-    <!-- 
-        El main tiene que tener un position: relative
-        Modal le das absolute y 100% 100vh 
-            - Al modal le das el blur al padre
-     -->
+    <div class="overlay"></div>
+    <div class="modal"></div>
 
-    <main class="main-container">
+    <main class="main-container">  
+
         <header class="header">
             <div class="container">
                 <div class="header__box-logo">
@@ -25,19 +23,20 @@
                 </div>     
             </div>
         </header>
-        <div class="input">
-            <div class="container input__content">
-                <input class="input__buscador" type="text" placeholder="Buscar...">
+
+        <div class="search">
+            <div class="container search__content">
+                <input class="search__input" type="text" placeholder="Buscar...">
             </div>
         </div>
+
         <section class="cards-container">
             <div class="container">
     
-                <div class="cards"> </div>
+                <div class="cards"></div>
     
             </div>
         </section>
-        <div class="section-modal"></div>  
     </main>
     
     <script src="dist/build.js"></script>

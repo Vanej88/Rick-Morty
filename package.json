@@ -8,8 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack -w",
-    "start": "node server.js",
-    "heroku-postbuild": "webpack -p"
+    "predeploy": "npm i gh-pages --save",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
@@ -41,6 +41,6 @@
     "@babel/polyfill": "^7.7.0",
     "gh-pages": "^3.1.0",
     "lite-server": "^2.6.1",
-    "webpack": "^4.41.2"
+    "webpack": "^5.31.0"
   }
 }

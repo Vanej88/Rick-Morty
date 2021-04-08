@@ -1,10 +1,25 @@
 import { displayCards, clearCards } from "./card"
 
-const modalParent = document.querySelector('.section-modal');
-const modalFetch = document.createElement('div');
-modalFetch.setAttribute('class', 'modal-fetch');
-modalParent.appendChild(modalFetch); 
+const body = document.querySelector('body');
+const modalParent = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
 
+export function displayModal(){
+
+    modalParent.classList.add('modal--open');
+    overlay.classList.add('overlay--visible');
+
+    body.classList.add('no-scroll');  
+    
+}
+
+export function hideModal(){
+    console.log("calling")
+    modalParent.classList.remove('modal--open');
+    body.classList.remove('no-scroll');
+    overlay.classList.remove('overlay--visible');
+    console.log('hi')
+}   
 
 export function openPopup(event){
 
@@ -18,7 +33,7 @@ export function openPopup(event){
   
         
    const clickedChar = `
-   <div class="modal"> 
+   
        <div class="modal__container">
             <div clas="modal__box-img">
                 <img class="modal__img" src="${image}">
@@ -41,33 +56,25 @@ export function openPopup(event){
                     <p class="modal__details-text-bold">${location}</p>
                 </div>
             </div>
+            <div class="modal__box-btn">
+                <button id="close-modal" class="modal__btn" type="button" ><i class="fas fa-times"></i></button>
+            </div>
         </div>  
-    </div> 
     `
 
-    modalFetch.innerHTML = clickedChar; 
+    modalParent.innerHTML = clickedChar; 
 
     displayModal();
 
-    hideModal(); 
+    const closeModal = document.querySelector('#close-modal');
+
+
+    closeModal.addEventListener("click", hideModal);
+
+
+
+
 }
 
-export function displayModal(){
-    modalParent.classList.add('section-modal');
-    modalFetch.classList.add('modal-fetch');
-    
-  
-    
-}
 
-export function hideModal(){
-
-    modalFetch.addEventListener('click', function(event){
-        //let parent = document.querySelector('.modal-fetch')
-        modalFetch.innerHTML = ''
-        //backGround.classList.remove('background-effect')
-    })    
-    
-}
-
-clearCards()
+//clearCards()
