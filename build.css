@@ -50,6 +50,9 @@ body {
   background-color: black;
   font-family: 'Dosis', sans-serif; }
 
+.no-scroll {
+  overflow: hidden; }
+
 .container {
   max-width: 1280px;
   margin: 0 auto; }
@@ -66,7 +69,7 @@ body {
     max-width: 316px;
     margin: 0 auto; }
 
-.input__content {
+.search__content {
   max-width: 726px;
   max-height: 50px;
   display: flex;
@@ -74,7 +77,7 @@ body {
   padding-top: 50px;
   padding-bottom: 30px; }
 
-.input__buscador {
+.search__input {
   width: 100%;
   background-color: #2f2f2f;
   opacity: 0.7;
@@ -131,16 +134,28 @@ body {
   .card__type {
     padding: 2px; }
 
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: none;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px); }
+  .overlay--visible {
+    display: block; }
+
 .modal {
-  position: absolute;
+  display: none;
+  position: fixed;
   width: 100%;
   height: 100%;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
   z-index: 1;
-  display: flex;
   justify-content: center;
   align-items: center; }
+  .modal--open {
+    display: flex; }
   .modal__container {
     background-color: white;
     color: black;
@@ -148,11 +163,23 @@ body {
     max-width: 833px;
     width: 100%;
     border-radius: 8px;
-    overflow: hidden; }
+    overflow: hidden;
+    position: relative; }
+  .modal__btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    background-color: transparent;
+    outline: none; }
   .modal__img {
-    display: block; }
+    display: block;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%; }
   .modal__box-text {
-    margin-left: 20px; }
+    padding: 20px; }
   .modal__title {
     font-weight: 800;
     font-size: 30px;

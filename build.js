@@ -1,102 +1,18 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/index.js");
-/******/ })
-/************************************************************************/
-/******/ ({
+/******/ (function() { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/js/card.js":
 /*!************************!*\
   !*** ./src/js/card.js ***!
   \************************/
-/*! exports provided: displayCards, clearCards */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "displayCards", function() { return displayCards; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearCards", function() { return clearCards; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "displayCards": function() { return /* binding */ displayCards; },
+/* harmony export */   "clearCards": function() { return /* binding */ clearCards; }
+/* harmony export */ });
 /* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal */ "./src/js/modal.js");
 
 function displayCards(characters) {
@@ -122,7 +38,7 @@ function displayCard(character) {
   let card = document.createElement("div");
   card.classList.add("card");
   card.innerHTML = template;
-  card.addEventListener("click", _modal__WEBPACK_IMPORTED_MODULE_0__["openPopup"]);
+  card.addEventListener("click", _modal__WEBPACK_IMPORTED_MODULE_0__.openPopup);
   padre.appendChild(card);
 }
 
@@ -133,41 +49,22 @@ function clearCards() {
 
 /***/ }),
 
-/***/ "./src/js/index.js":
-/*!*************************!*\
-  !*** ./src/js/index.js ***!
-  \*************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ "./src/js/main.js");
-/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/main.scss */ "./src/styles/main.scss");
-/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_main_scss__WEBPACK_IMPORTED_MODULE_1__);
-//import "@babel/polyfill"
-
-
-Object(_main__WEBPACK_IMPORTED_MODULE_0__["main"])();
-
-/***/ }),
-
 /***/ "./src/js/input.js":
 /*!*************************!*\
   !*** ./src/js/input.js ***!
   \*************************/
-/*! exports provided: configureInput */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "configureInput", function() { return configureInput; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "configureInput": function() { return /* binding */ configureInput; }
+/* harmony export */ });
 /* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/js/card.js");
 
 function configureInput(characters) {
-  const input = document.querySelector('.input__buscador');
+  const input = document.querySelector('.search__input');
   input.addEventListener('keydown', function (event) {
-    // if(event.keyCode === 13){
     const value = input.value;
     const filtered = characters.filter(char => {
       //console.log(characters[0])
@@ -176,8 +73,8 @@ function configureInput(characters) {
       let lowerValue = value.toLowerCase();
       return nombre.includes(lowerValue);
     });
-    Object(_card__WEBPACK_IMPORTED_MODULE_0__["clearCards"])();
-    Object(_card__WEBPACK_IMPORTED_MODULE_0__["displayCards"])(filtered); //}
+    (0,_card__WEBPACK_IMPORTED_MODULE_0__.clearCards)();
+    (0,_card__WEBPACK_IMPORTED_MODULE_0__.displayCards)(filtered);
   });
 }
 
@@ -187,12 +84,13 @@ function configureInput(characters) {
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/*! exports provided: main */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "main", function() { return main; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "main": function() { return /* binding */ main; }
+/* harmony export */ });
 /* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/js/card.js");
 /* harmony import */ var _input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./input */ "./src/js/input.js");
 
@@ -211,8 +109,8 @@ function main() {
         });
 
         if (characters.length >= characterNum) {
-          Object(_card__WEBPACK_IMPORTED_MODULE_0__["displayCards"])(characters);
-          Object(_input__WEBPACK_IMPORTED_MODULE_1__["configureInput"])(characters);
+          (0,_card__WEBPACK_IMPORTED_MODULE_0__.displayCards)(characters);
+          (0,_input__WEBPACK_IMPORTED_MODULE_1__.configureInput)(characters);
         }
       });
     }
@@ -227,20 +125,32 @@ function main() {
 /*!*************************!*\
   !*** ./src/js/modal.js ***!
   \*************************/
-/*! exports provided: openPopup, displayModal, hideModal */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "openPopup", function() { return openPopup; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "displayModal", function() { return displayModal; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hideModal", function() { return hideModal; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "displayModal": function() { return /* binding */ displayModal; },
+/* harmony export */   "hideModal": function() { return /* binding */ hideModal; },
+/* harmony export */   "openPopup": function() { return /* binding */ openPopup; }
+/* harmony export */ });
 /* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/js/card.js");
 
-const modalParent = document.querySelector('.section-modal');
-const modalFetch = document.createElement('div');
-modalFetch.setAttribute('class', 'modal-fetch');
-modalParent.appendChild(modalFetch);
+const body = document.querySelector('body');
+const modalParent = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+function displayModal() {
+  modalParent.classList.add('modal--open');
+  overlay.classList.add('overlay--visible');
+  body.classList.add('no-scroll');
+}
+function hideModal() {
+  console.log("calling");
+  modalParent.classList.remove('modal--open');
+  body.classList.remove('no-scroll');
+  overlay.classList.remove('overlay--visible');
+  console.log('hi');
+}
 function openPopup(event) {
   const image = event.currentTarget.querySelector("[data-image]").getAttribute('data-image');
   const name = event.currentTarget.querySelector("[data-name]").getAttribute('data-name');
@@ -250,7 +160,7 @@ function openPopup(event) {
   const origin = event.currentTarget.querySelector("[data-origin]").getAttribute("data-origin");
   const location = event.currentTarget.querySelector("[data-location]").getAttribute("data-location");
   const clickedChar = `
-   <div class="modal"> 
+   
        <div class="modal__container">
             <div clas="modal__box-img">
                 <img class="modal__img" src="${image}">
@@ -273,24 +183,16 @@ function openPopup(event) {
                     <p class="modal__details-text-bold">${location}</p>
                 </div>
             </div>
+            <div class="modal__box-btn">
+                <button id="close-modal" class="modal__btn" type="button" ><i class="fas fa-times"></i></button>
+            </div>
         </div>  
-    </div> 
     `;
-  modalFetch.innerHTML = clickedChar;
+  modalParent.innerHTML = clickedChar;
   displayModal();
-  hideModal();
-}
-function displayModal() {
-  modalParent.classList.add('section-modal');
-  modalFetch.classList.add('modal-fetch');
-}
-function hideModal() {
-  modalFetch.addEventListener('click', function (event) {
-    //let parent = document.querySelector('.modal-fetch')
-    modalFetch.innerHTML = ''; //backGround.classList.remove('background-effect')
-  });
-}
-Object(_card__WEBPACK_IMPORTED_MODULE_0__["clearCards"])();
+  const closeModal = document.querySelector('#close-modal');
+  closeModal.addEventListener("click", hideModal);
+} //clearCards()
 
 /***/ }),
 
@@ -298,12 +200,96 @@ Object(_card__WEBPACK_IMPORTED_MODULE_0__["clearCards"])();
 /*!******************************!*\
   !*** ./src/styles/main.scss ***!
   \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function() {
 
 // extracted by mini-css-extract-plugin
 
 /***/ })
 
-/******/ });
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	!function() {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = function(module) {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				function() { return module['default']; } :
+/******/ 				function() { return module; };
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+!function() {
+"use strict";
+/*!*************************!*\
+  !*** ./src/js/index.js ***!
+  \*************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ "./src/js/main.js");
+/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/main.scss */ "./src/styles/main.scss");
+/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_main_scss__WEBPACK_IMPORTED_MODULE_1__);
+//import "@babel/polyfill"
+
+
+(0,_main__WEBPACK_IMPORTED_MODULE_0__.main)();
+}();
+/******/ })()
+;
 //# sourceMappingURL=build.js.map
