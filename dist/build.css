@@ -45,6 +45,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+* {
+  box-sizing: border-box; }
+
 body {
   color: white;
   background-color: black;
@@ -55,6 +58,7 @@ body {
 
 .container {
   max-width: 1280px;
+  width: 100%;
   margin: 0 auto; }
 
 .main-container {
@@ -87,52 +91,61 @@ body {
   border: none;
   border-radius: 8px; }
 
+@media (max-width: 675px) {
+  .search__content {
+    max-width: 400px; } }
+
 /* estilos contendor cards */
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 10px; }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px; }
 
 /* estilos solo card */
-.card {
-  width: 25%;
+.card__content {
+  border-radius: 8px;
+  overflow: hidden; }
+
+.card__img {
+  display: block;
+  width: 100%;
+  min-height: 210px;
+  -o-object-fit: cover;
+     object-fit: cover; }
+
+.card__box-text {
+  padding: 20px;
+  background-color: #2f2f2f; }
+
+.card__title {
+  font-weight: 800;
+  font-size: 20px;
+  padding: 5px; }
+
+.card__description {
+  font-weight: 600;
+  font-size: 18px;
   display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: 10px; }
-  .card__content {
-    border-radius: 8px;
-    overflow: hidden; }
-  .card__img {
-    display: block;
-    width: 100%;
-    max-height: 210px;
-    -o-object-fit: cover;
-       object-fit: cover; }
-  .card__box-text {
-    padding: 20px;
-    background-color: #2f2f2f; }
-  .card__title {
-    font-weight: 800;
-    font-size: 20px;
-    padding: 5px; }
-  .card__description {
-    font-weight: 600;
-    font-size: 18px;
-    display: flex;
-    align-items: center; }
-  .card__circle {
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    margin-right: 8px;
-    background-color: gray; }
-    .card__circle--active {
-      background-color: #5BCE27; }
-  .card__status {
-    padding: 2px; }
-  .card__type {
-    padding: 2px; }
+  align-items: center; }
+
+.card__circle {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  background-color: gray; }
+  .card__circle--active {
+    background-color: #5BCE27; }
+
+.card__status {
+  padding: 2px; }
+
+.card__type {
+  padding: 2px; }
+
+@media (max-width: 756px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr); } }
 
 .overlay {
   width: 100%;
@@ -212,8 +225,9 @@ body {
   top: 0;
   right: 250px; }
 
-.modal-fetch {
-  transform: translate(250px, 400px); }
+@media (max-width: 675px) {
+  .modal__container {
+    width: 85%; } }
 
 
 /*# sourceMappingURL=build.css.map*/

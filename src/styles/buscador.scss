@@ -17,3 +17,9 @@
     border:none;
     border-radius:8px;
 }
+
+@media (max-width:675px){
+    .search__content{
+        max-width: 400px;
+    }
+}

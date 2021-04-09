@@ -10,7 +10,7 @@ function displayCard(character) {
   // pintamos todos los personajes
 
   let template = `
-                    <div class="card__content">
+                    <div  class="card__content">
                         <div class="card__box-img">
                             <img class="card__img" src="${character.image}" data-image="${character.image}" alt="rick">
                         </div>

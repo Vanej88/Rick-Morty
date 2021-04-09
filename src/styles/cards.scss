@@ -1,33 +1,23 @@
 
 /* estilos contendor cards */
 .cards{
-    display:flex;
-    flex-wrap: wrap;
-    padding:10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
 }
 
 /* estilos solo card */
 .card {
-    width: 25%;
-    display:flex;
-    flex-direction:column;
-    
-    box-sizing: border-box;
-    padding: 10px;
 
     &__content {
         border-radius: 8px;
         overflow: hidden;
     }
 
-    // &__box-img {
-
-    // }
-
     &__img {
         display: block;
         width: 100%;
-        max-height: 210px;
+        min-height: 210px;
         object-fit: cover;
     }
 
@@ -70,5 +60,10 @@
     }
 }
 
+@media (max-width: 756px){
+    .cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
 
