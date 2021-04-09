@@ -114,7 +114,11 @@ body {
     width: 100%;
     min-height: 210px;
     -o-object-fit: cover;
-       object-fit: cover; }
+       object-fit: cover;
+    transition: ease-in-out 0.5s; }
+    .card__img:hover {
+      transform: scale(1.1);
+      transform: blur(1px); }
   .card__box-text {
     padding: 20px;
     background-color: #2f2f2f;
