@@ -59,7 +59,8 @@ body {
 .container {
   max-width: 1280px;
   width: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 0 24px; }
 
 .main-container {
   position: relative;
@@ -75,7 +76,6 @@ body {
 
 .search__content {
   max-width: 726px;
-  max-height: 50px;
   display: flex;
   justify-content: center;
   padding-top: 50px;
@@ -102,46 +102,48 @@ body {
   gap: 24px; }
 
 /* estilos solo card */
-.card__content {
-  border-radius: 8px;
-  overflow: hidden; }
+.card {
+  display: flex; }
+  .card__content {
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; }
+  .card__img {
+    display: block;
+    width: 100%;
+    min-height: 210px;
+    -o-object-fit: cover;
+       object-fit: cover; }
+  .card__box-text {
+    padding: 20px;
+    background-color: #2f2f2f;
+    flex: 1; }
+  .card__title {
+    font-weight: 800;
+    font-size: 20px;
+    padding: 5px; }
+  .card__description {
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    align-items: center; }
+  .card__status:after {
+    content: "-";
+    padding: 0 4px 0 2px; }
+  .card__status-circle {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+    background-color: gray; }
+    .card__status-circle--active {
+      background-color: #5BCE27; }
 
-.card__img {
-  display: block;
-  width: 100%;
-  min-height: 210px;
-  -o-object-fit: cover;
-     object-fit: cover; }
-
-.card__box-text {
-  padding: 20px;
-  background-color: #2f2f2f; }
-
-.card__title {
-  font-weight: 800;
-  font-size: 20px;
-  padding: 5px; }
-
-.card__description {
-  font-weight: 600;
-  font-size: 18px;
-  display: flex;
-  align-items: center; }
-
-.card__circle {
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  margin-right: 8px;
-  background-color: gray; }
-  .card__circle--active {
-    background-color: #5BCE27; }
-
-.card__status {
-  padding: 2px; }
-
-.card__type {
-  padding: 2px; }
+@media (max-width: 1000px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media (max-width: 756px) {
   .cards {

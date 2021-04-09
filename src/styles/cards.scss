@@ -9,9 +9,13 @@
 /* estilos solo card */
 .card {
 
+    display: flex;
+    
     &__content {
         border-radius: 8px;
         overflow: hidden;
+        display:flex;
+        flex-direction: column;
     }
 
     &__img {
@@ -24,6 +28,7 @@
     &__box-text {
         padding: 20px;
         background-color:#2f2f2f;
+        flex: 1; 
     }
 
     &__title {
@@ -39,7 +44,15 @@
         align-items: center;
     }
 
-    &__circle{
+    &__status {
+        &:after {
+            content:"-";
+            padding: 0 4px 0 2px;
+        }
+    }
+
+    &__status-circle{
+        display: inline-block;
         height:10px;
         width:10px;
         border-radius: 50%;
@@ -51,12 +64,11 @@
         }
     }
 
-    &__status {
-        padding:2px;
-    }
+}
 
-    &__type {
-        padding:2px;
+@media (max-width:1000px){
+    .cards{
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -65,5 +77,6 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 
 
