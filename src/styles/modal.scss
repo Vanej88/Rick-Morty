@@ -105,10 +105,18 @@
   
 }
 
-@media (max-width:675px){
+@media (max-width: 1000px){
     .modal{
         &__container{
             width: 85%;
+        }
+    }
+}
+
+@media (max-width:675px){
+    .modal{
+        &__container{
+            width: 75%;
         }
     }
 }

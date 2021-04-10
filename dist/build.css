@@ -117,8 +117,7 @@ body {
        object-fit: cover;
     transition: ease-in-out 0.5s; }
     .card__img:hover {
-      transform: scale(1.1);
-      transform: blur(1px); }
+      transform: scale(1.1); }
   .card__box-text {
     padding: 20px;
     background-color: #2f2f2f;
@@ -152,6 +151,10 @@ body {
 @media (max-width: 756px) {
   .cards {
     grid-template-columns: repeat(2, 1fr); } }
+
+@media (max-width: 755px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr); } }
 
 .overlay {
   width: 100%;
@@ -231,9 +234,13 @@ body {
   top: 0;
   right: 250px; }
 
-@media (max-width: 675px) {
+@media (max-width: 1000px) {
   .modal__container {
     width: 85%; } }
+
+@media (max-width: 675px) {
+  .modal__container {
+    width: 75%; } }
 
 
 /*# sourceMappingURL=build.css.map*/
