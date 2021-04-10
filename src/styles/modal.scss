@@ -109,6 +109,7 @@
     .modal{
         &__container{
             width: 85%;
+            flex-direction:column;
         }
     }
 }
